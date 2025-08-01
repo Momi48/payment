@@ -164,7 +164,7 @@ class _PaymentPageState extends State<PaymentPage> {
         body: body,
         headers: {
           'Authorization':
-              'Bearer sk_test_51RokxU1KhGJHMIW6m1tgxTuR1Ey2ViloSqSJcRQsP01OLcmdpW8d797qbB5okCrZiwkJ6XkI8VUBuULbAyA724oH00ddJkCQvr',
+              'Bearer Stripe_Secret_Key',
           'Content-Type': 'application/x-www-form-urlencoded',
         },
       );

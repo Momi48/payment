@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:http/http.dart' as http;
 
@@ -164,7 +165,7 @@ class _PaymentPageState extends State<PaymentPage> {
         body: body,
         headers: {
           'Authorization':
-              'Bearer Stripe_Secret_Key',
+              'Bearer ${dotenv.env['STRIPE_SECRET']}',
           'Content-Type': 'application/x-www-form-urlencoded',
         },
       );

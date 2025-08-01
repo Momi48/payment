@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:payment_integration/payment_screen.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
-   Stripe.publishableKey = 
-   'PUBLISH_STRIPE_SECRET_KEY';
-  String secret_key = 'STRIPE_SECRET_KEY';
+  await dotenv.load(fileName: ".env"); 
+   Stripe.publishableKey = dotenv.env["STRIPE_KEY"].toString();
+ 
   
   runApp(const MyApp());
 }
